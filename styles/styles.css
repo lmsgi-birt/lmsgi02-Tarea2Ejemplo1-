@@ -1,0 +1,229 @@
+@import "reset.css";
+
+/* Elementos comunes a todo el sitio web */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Albert Sans', 'Open Sans', sans-serif;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  word-spacing: 3px;
+  width: 75%;
+  background-color: #e5e5f7;
+  opacity: 0.96;
+  background-size: 10px 10px;
+  background-image: repeating-linear-gradient(45deg, #363636 0, #363636 1px, #e5e5f7 0, #e5e5f7 50%);
+}
+@media only screen and (max-width: 700px) {
+  body { width: 95%; }
+}
+h2, h1 {
+  letter-spacing: -0.06em;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.75em;
+}
+h1 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 230%;
+  letter-spacing: .2rem;
+}
+h2 { font-size: 180%; }
+li {
+  background: url("../images/bullet-flecha.gif") no-repeat left 2px transparent;
+  background-position-x: left;
+  background-position-y: 2px;
+}
+p { margin-bottom: 0.5em; }
+.disposicion-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0;
+}
+/* Fin de elementos comunes a todo el sitio web */
+
+/* Cabecera y menú de navegación*/
+header {
+  gap: 10px;
+  background-color: #363636;
+}
+@media only screen and (max-width: 750px) {
+  header { flex-direction: column; }
+}
+.navigation {
+  flex-basis: 80%;
+  flex-flow: column-reverse;
+  padding: 2em;
+}
+@media only screen and (max-width: 750px) {
+  .navigation { padding-top: 0; }
+}
+.logotipo {
+  flex-basis: auto;
+  padding: 1em 2em;
+}
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Verdana,sans-serif;
+  font-size: 15px;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+.navigation ul li {
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+  background-image: none;
+}
+.navigation ul li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 800;
+}
+.navigation ul li a:visited:not(.activo) {
+  color: #300f69;
+  text-decoration: underline;
+}
+.navigation ul li a:hover:not(.activo) {
+  color: #363636;
+  text-decoration: underline;
+}
+.navigation--activo {
+  background-color: #c6b8b4;
+  color: #1a1a1a;
+  font-weight: 800;
+}
+/* Fin de cabecera y menú de navegación*/
+
+/* Presentación principal del sitio */
+.presentacion {
+  background-color: #1a1a1a;
+  background-image: url("../images/libros-infantiles-presentacion.jpg");
+  background-repeat: no-repeat;
+  height: 480px;
+  padding: 3em;
+  grid-column: 1 / 4;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 1500px) {
+  .presentacion { height: 620px; }
+}
+@media only screen and (max-width: 1300px) {
+  .presentacion {
+    height: 520px;
+    grid-column: 1 / 3;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .presentacion { grid-column: 1 / 5; }
+}
+.destacado-sobre-imagen {
+  border-radius: 5px;
+  background-color: #fff;
+  opacity: 0.7;
+  padding: 1.5em;
+  font-size: 120%;
+  font-weight: 500;
+  margin-top: auto;
+}
+/* Fin presentación principal del sitio */
+
+/* Destacados */
+.libros-destacados {
+  grid-column: 4 / 5;
+  grid-row: 1;
+  justify-self: end;
+  background-color: #e5e5f7;
+  padding: 1em 2em;
+}
+@media only screen and (max-width: 1300px) {
+  .libros-destacados { grid-column: 3 / 5; }
+}
+@media only screen and (max-width: 900px) {
+  .libros-destacados {
+    grid-column: 1 / 5;
+    grid-row: 2;
+  }
+}
+.noticias-destacadas {
+  grid-column: 1 / 5;
+  grid-row: 2;
+  background-color: #e0d2ce;
+  padding: 1em 2em;
+}
+.listados-destacados {
+  list-style-type: none;
+  line-height: 130%;
+  padding-left: 1em;
+}
+.listados-destacados a { text-decoration: none; }
+.listados-destacados a:visited { color: #300f69; }
+.listados-destacados a:hover { text-decoration: underline; }
+.listados-destacados li { padding: 0 0 0 17px; }
+.noticias-destacadas__mas, .libros-destacados__mas { 
+  font-style: italic;
+  float: right; 
+}
+/* Fin destacados */
+
+/* Pie de página */
+footer {
+  background-color: #363636;
+  color: #fff;
+  padding: 2em;
+}
+footer ul {
+  list-style-type: none;
+  justify-content: space-between;
+}
+footer ul li { background-image: none; }
+footer a { color: #fff; }
+footer a:hover { color: #007ca9; }
+/* Fin pie de página */
+
+/* Contenidos */
+.contenido {
+  background-color: #fff;
+  grid-column: 1 / 5;
+  padding: 2em 3em 2em 3em;
+}
+.contenido__resumen {
+  font-style: italic;
+  font-size: larger;
+  margin-bottom: 1em;
+}
+.contenido img {
+  float: left;
+  margin: 0 5px 0 5px;
+}
+/* Fin de contenidos */
+
+/* Formularios */
+fieldset {
+  margin-top: 1em;
+  background-color: rgb(208, 219, 216);
+}
+legend {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+form div { margin-top: 0.5em; }
+/* Fin de formularios */
